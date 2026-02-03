@@ -40,11 +40,11 @@ At present, the analysis is executed through a **Jupyter notebook** interface to
 
 ## Where do we stand? 
 We are in early testing stages. The code is able to run basic object and event selection. Importent next steps are:
-- Save analysis outputs to **Parquet files** for downstream machine learning workflows
-- Include **systematic uncertainties** for simulation and propagate them through the pipeline
-- Scale the workflow to the **full 2016 Run 2 dataset**, including:
-  - All available data
-  - Relevant simulation backgrounds
-  - Potential signal samples for validation and testing
+- [x] Save analysis outputs to **Parquet files** for downstream machine learning workflows
+- [x] Include **systematic uncertainties** for simulation and propagate them through the pipeline (done for certain examples!)
+- [ ] Scale the workflow to the **full 2016 Run 2 dataset**, including:
+  - [ ] All available data
+  - [ ] Relevant simulation backgrounds
+  - [ ] Potential signal samples for validation and testing
 
 ---
