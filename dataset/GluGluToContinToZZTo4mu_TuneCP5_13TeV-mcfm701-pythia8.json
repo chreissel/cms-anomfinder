@@ -1,0 +1,12 @@
+{
+    "GluGluToContinToZZTo4mu_TuneCP5_13TeV-mcfm701-pythia8": {
+        "files": {
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4mu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/2500000/B3B3704B-B93D-1544-92B0-AD774D3BF9F8.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4mu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/2500000/B9B92ADB-C478-4E4E-AD21-05D3A2C5A37C.root": "Events"
+        },
+        "metadata": {
+            "isMC": true,
+	    "XS": 0.00159,
+        }
+    }
+}

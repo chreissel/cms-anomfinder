@@ -1,0 +1,16 @@
+{
+    "GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8": {
+        "files": {
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/100000/02FDA806-2B35-C44D-95D6-94D7A9B9A216.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/230000/903E435E-AFA1-AD4F-8F7E-F9F65F232138.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/2430000/A545931B-D846-FB4C-B529-337688364562.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/250000/59777831-A9B3-374B-9C86-6E5CCACBE686.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/2510000/5EFB75B5-7640-2346-8F5C-B677DE705144.root": "Events",
+            "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v2/40000/86942260-F9E8-8A47-9D47-3305636CDA6B.root": "Events"
+        },
+        "metadata": {
+            "isMC": true,
+	    "XS": 0.00159,
+        }
+    }
+}
