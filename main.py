@@ -6,7 +6,9 @@ from coffea.nanoevents import NanoAODSchema
 import awkward as ak
 import hist
 from processor import MyProcessor
-
+from distributed import Client
+from dask_lxplus import CernCluster
+import socket
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -68,7 +70,40 @@ def get_executor(executor_type, workers=4):
         return processor.IterativeExecutor()
     
     elif executor_type == 'dask-lxplus':
-        print('wrong path') 
+        from dask_lxplus import CernCluster
+        from dask.distributed import Client
+
+        print(f"Setting up LXPLUS cluster with {workers} workers...")
+        cluster = CernCluster(
+            cores=1,
+            memory='3000MB',
+            disk='10GB',
+            death_timeout='60',
+            lcg = False,
+            nanny = False,
+            container_runtime = 'none',
+            log_directory='/eos/user/c/chreisse/condor/log',
+            scheduler_options = {
+                'port': 8786,
+                'host': socket.gethostname(),
+            },
+            job_extra = {
+                'MY.JobFlavour': '"longlunch"',
+            },
+        )
+        cluster.scale(jobs=workers)
+        client = Client(cluster)
+        #upload files
+        client.upload_file('processor.py')
+        client.upload_file('utils.py')
+
+        print(f"Dashboard available at: {client.dashboard_link}")
+        #print("Waiting for workers to start...")
+        #client.wait_for_workers(n_workers=1)  # Wait for at least 1 worker
+        #print(f"Cluster ready with {len(client.scheduler_info()['workers'])} workers")
+
+        # Return DaskExecutor with the client
+        return processor.DaskExecutor(client=client)
     else:
         raise ValueError(f"Unknown executor type: {executor_type}")
 

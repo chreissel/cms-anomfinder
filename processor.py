@@ -68,7 +68,6 @@ class MyProcessor(processor.ProcessorABC):
                         weightUp = ak.prod(self.sf['muon_id'].evaluate(selected_muons.eta, selected_muons.pt, 'systup'), axis=1),
                         weightDown = ak.prod(self.sf['muon_id'].evaluate(selected_muons.eta, selected_muons.pt, 'systdown'), axis=1)
                        )
-            
         
         # inputs for ML starting here
         variables = {
@@ -77,7 +76,7 @@ class MyProcessor(processor.ProcessorABC):
                         "luminosityBlock": selected_events.luminosityBlock,
         }
         if isMC:
-               variables["weight"] =  weights.weight()
+               variables["weight"] =  ak.Array(weights.weight())
         # add the selected muon kinematics
         for i in range(4):
             variables[f"pt{i}"] = selected_muons.pt[:,i]
@@ -88,10 +87,13 @@ class MyProcessor(processor.ProcessorABC):
             variables[f"dz{i}"] = selected_muons.dz[:,i]
             variables[f"dxy{i}"] = selected_muons.dxy[:,i]
 
+        array = ak.zip(variables, depth_limit=1)
+        clean_array = ak.Array(array.layout)
+
         return {
             dataset: {
                 "cutflow": {"all": len(events), "selected": len(events[cut])}, 
-                "array": column_accumulator(ak.zip(variables, depth_limit=1))
+                "array": column_accumulator(clean_array)
             }
         }
 
